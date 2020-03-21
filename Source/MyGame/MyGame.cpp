@@ -13,7 +13,7 @@ IMPLEMENT_PRIMARY_GAME_MODULE(FMySlateModule, MyGame, "MyGame");//×Ô¶¨ÒåÄ£¿é,ÃûÎ
 
 void FMySlateModule::StartupModule()
 {
-	//ÏÈÈ¡Ïû×¢²á£¬±£Ö¤²»»áÖØ¸´×¢²á
+	//ÏÈÈ¡Ïû×¢²á£¬±£Ö¤²»»áÖØ¸´×¢²á.
 	FSlateStyleRegistry::UnRegisterSlateStyle(SlAiStyle::GetStyleSetNema());
 	SlAiStyle::Initialize();
 }
