@@ -30,7 +30,7 @@ void SSlAiMenuWidget::Construct(const FArguments& InArgs)
 
 
 
-
+	//FInternationalization::Get().SetCurrentCulture(TEXT("en"));
 
 
 
@@ -83,7 +83,7 @@ void SSlAiMenuWidget::Construct(const FArguments& InArgs)
 					.VAlign(VAlign_Center)
 					[
 						SAssignNew(TitleText,STextBlock)
-						.Text(NSLOCTEXT("SlAiMenu", "Menu", "Menu"))
+						.Text(FTextMenu)
 						.Font(MenuStyle->Font_60)
 
 

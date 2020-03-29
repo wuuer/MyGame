@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 #include "CoreMinimal.h"
@@ -22,38 +22,40 @@ public:
 
 #define LOCTEXT_NAMESPACE "SlAiMenu"
 
-////Ö÷½çÃæ
+////ä¸»ç•Œé¢
 
 
-//FText FTextMenu; = LOCTEXT("Menu", "Menu");//²Ëµ¥
-//LOCTEXT("StartGame", "StartGame");//¿ªÊ¼ÓÎÏ·
-//FText FTextMenu = LOCTEXT("Menu", "Menu");//²Ëµ¥
-//FText FTextStartGame = LOCTEXT("StartGame", "StartGame");//¿ªÊ¼ÓÎÏ·
-////SlAiIntemational::Register(LOCTEXT("GameOption", "GameOption"));//ÓÎÏ·ÉèÖÃ
-////SlAiIntemational::Register(LOCTEXT("QuitGame", "QuitGame"));//ÍË³öÓÎÏ·
+const FText FTextMenu = LOCTEXT("èœå•", "èœå•");//èœå•
+//LOCTEXT("StartGame", "StartGame");//å¼€å§‹æ¸¸æˆ
+//FText FTextMenu = LOCTEXT("Menu", "Menu");//èœå•
+//FText FTextStartGame = LOCTEXT("StartGame", "StartGame");//å¼€å§‹æ¸¸æˆ
+//#define TESTT SlAiIntemational::Register(LOCTEXT("Menu", "Menu"));//æ¸¸æˆè®¾ç½®
+
+////#define TESTT SlAiIntemational::Register(LOCTEXT("GameOption", "GameOption"));//æ¸¸æˆè®¾ç½®
+////SlAiIntemational::Register(LOCTEXT("QuitGame", "QuitGame"));//é€€å‡ºæ¸¸æˆ
 ////
-////SlAiIntemational::Register(LOCTEXT("NewGame", "NewGame"));//ĞÂÓÎÏ·
-////SlAiIntemational::Register(LOCTEXT("LoadRecord", "LoadRecord"));//¼ÓÔØ´æµµ
+////SlAiIntemational::Register(LOCTEXT("NewGame", "NewGame"));//æ–°æ¸¸æˆ
+////SlAiIntemational::Register(LOCTEXT("LoadRecord", "LoadRecord"));//åŠ è½½å­˜æ¡£
 ////
-////SlAiIntemational::Register(LOCTEXT("ChooseRecord", "ChooseRecord"));//Ñ¡Ôñ´æµµ
+////SlAiIntemational::Register(LOCTEXT("ChooseRecord", "ChooseRecord"));//é€‰æ‹©å­˜æ¡£
 ////
-////½øÈëÓÎÏ·½çÃæ
-////SlAiIntemational::Register(LOCTEXT("RecordName", "RecordName"));//´æµµÃû
-////SlAiIntemational::Register(LOCTEXT("EnterGame", "EnterGame"));//½øÈëÓÎÏ·
-////SlAiIntemational::Register(LOCTEXT("EnterRecord", "EnterRecord"));//½øÈë´æµµ
-////SlAiIntemational::Register(LOCTEXT("RecordNameHint", "Input Record Name!");//ÊäÈë´æµµÃû
-////SlAiIntemational::Register(LOCTEXT("NameRepeatedHint", "Record Name Repeated!");//ÊäÈë´æµµÃû
+////è¿›å…¥æ¸¸æˆç•Œé¢
+////SlAiIntemational::Register(LOCTEXT("RecordName", "RecordName"));//å­˜æ¡£å
+////SlAiIntemational::Register(LOCTEXT("EnterGame", "EnterGame"));//è¿›å…¥æ¸¸æˆ
+////SlAiIntemational::Register(LOCTEXT("EnterRecord", "EnterRecord"));//è¿›å…¥å­˜æ¡£
+////SlAiIntemational::Register(LOCTEXT("RecordNameHint", "Input Record Name!");//è¾“å…¥å­˜æ¡£å
+////SlAiIntemational::Register(LOCTEXT("NameRepeatedHint", "Record Name Repeated!");//è¾“å…¥å­˜æ¡£å
 ////
-////ÓÎÏ·ÉèÖÃ½çÃæ
+////æ¸¸æˆè®¾ç½®ç•Œé¢
 //FText FTextChineseChange = 
-//LOCTEXT("Chinese", "Chinese");//ÖĞÎÄ
+//LOCTEXT("Chinese", "Chinese");//ä¸­æ–‡
 //FText FTextEnglishChange = 
-//LOCTEXT("English", "English");//Ó¢ÎÄ
-////SlAiIntemational::Register(LOCTEXT("Music", "Music"));//ÒôÀÖ
-////SlAiIntemational::Register(LOCTEXT("Sound", "Sound"));//ÒôĞ§
+//LOCTEXT("English", "English");//è‹±æ–‡
+////SlAiIntemational::Register(LOCTEXT("Music", "Music"));//éŸ³ä¹
+////SlAiIntemational::Register(LOCTEXT("Sound", "Sound"));//éŸ³æ•ˆ
 //
 //
-////ÁíÒ»ÖÖ·½·¨
+////å¦ä¸€ç§æ–¹æ³•
 ////FText FTextGoodbyeWorld =(NSLOCTEXT("SlAiMenu","Menu", "1234"));
 
 
