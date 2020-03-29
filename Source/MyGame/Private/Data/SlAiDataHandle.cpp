@@ -41,7 +41,7 @@ TSharedRef<SlAiDataHandle> SlAiDataHandle::Create()
 
 SlAiDataHandle::SlAiDataHandle()
 {
-	//初始化为英文
+	//初始化为中文
 	CurrentCulture = ECultureTeam::ZH;
 
 }
@@ -60,8 +60,10 @@ void SlAiDataHandle::ChangeLocalizationCulture(ECultureTeam Culture)
 		case ECultureTeam::ZH:
 				FInternationalization::Get().SetCurrentCulture(TEXT("zh"));
 				break;
+
 		default:
 			break;
+
 	}
 
 	//赋值,修改语言的枚举值,用于切换场景

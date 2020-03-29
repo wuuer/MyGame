@@ -50,7 +50,7 @@ void SSlAiGameOptionWidget::Construct(const FArguments& InArgs)
 					.VAlign(VAlign_Fill)
 					.Padding(FMargin(50.f))	
 					[
-						SNew(SVerticalBox)
+					SNew(SVerticalBox)
 					//第一行
 					+SVerticalBox::Slot()
 					.HAlign(HAlign_Fill)
@@ -68,7 +68,7 @@ void SSlAiGameOptionWidget::Construct(const FArguments& InArgs)
 						.OnCheckStateChanged(this,&SSlAiGameOptionWidget::ZhCheckBoxStateChanged)
 						[
 						SNew(STextBlock)
-						.Text((NSLOCTEXT("SlAiMenu", "Chinese", "Chinese")))
+						.Text((NSLOCTEXT("SlAiMenu", "中文", "中文")))
 						.Font(MenuStyle->Font_30)
 						.ColorAndOpacity(MenuStyle->FontColor_Black)
 						
@@ -86,7 +86,7 @@ void SSlAiGameOptionWidget::Construct(const FArguments& InArgs)
 							.OnCheckStateChanged(this, &SSlAiGameOptionWidget::EnCheckBoxStateChanged)
 						[
 							SNew(STextBlock)
-							.Text((NSLOCTEXT("SlAiMenu", "English", "English")))
+							.Text((NSLOCTEXT("SlAiMenu", "英语", "英语")))
 							.Font(MenuStyle->Font_30)
 							.ColorAndOpacity(MenuStyle->FontColor_Black)
 
@@ -115,7 +115,7 @@ void SSlAiGameOptionWidget::Construct(const FArguments& InArgs)
 							SNew(STextBlock)
 							.Font(MenuStyle->Font_30)
 							.ColorAndOpacity(MenuStyle->FontColor_Black)
-							.Text(NSLOCTEXT("SlAiMenu", "Musci", "Musci"))
+							.Text(NSLOCTEXT("SlAiMenu", "音乐", "音乐"))
 						]
 
 						+ SOverlay::Slot()
@@ -168,7 +168,7 @@ void SSlAiGameOptionWidget::Construct(const FArguments& InArgs)
 							SNew(STextBlock)
 							.Font(MenuStyle->Font_30)
 							.ColorAndOpacity(MenuStyle->FontColor_Black)
-							.Text(NSLOCTEXT("SlAiMenu", "Sound", "Sound"))
+							.Text(NSLOCTEXT("SlAiMenu", "声音", "声音"))
 						]
 
 						+ SOverlay::Slot()
