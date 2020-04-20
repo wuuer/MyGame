@@ -3,9 +3,12 @@
 
 #include "SlAiDataHandle.h"
 #include "Internationalization.h"
+#include "SlAiSingleton.h"
+#include "SlAiJsonHandle.h"
+#include "SlAiHelper.h"
 
 
-#include "SlAiStyle.h"
+//#include "SlAiStyle.h"
 
 TSharedPtr<SlAiDataHandle>SlAiDataHandle::DataInstance = NULL;
 
@@ -41,12 +44,86 @@ TSharedRef<SlAiDataHandle> SlAiDataHandle::Create()
 
 SlAiDataHandle::SlAiDataHandle()
 {
-	//初始化为中文
-	CurrentCulture = ECultureTeam::ZH;
+	
+	//初始化存档数据
+	InitRecordData();
+
+
+
+
+}
+
+void SlAiDataHandle::ResetMenuVolume(float MusciVal, float SoundVal)
+{
+
+	if (MusciVal > 0)
+	{
+		MusicVolume = MusciVal;
+	}
+	if (SoundVal > 0)
+	{
+		SoundVolume = SoundVal;
+	}
+
+
+
 
 }
 
 
+template<typename TEnum>
+FString SlAiDataHandle::GetEnumValueAsString(const FString& Name, TEnum Value)
+{
+	const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, *Name, true);
+	if (!EnumPtr)
+	{
+		return FString("InValid";)
+
+	}
+	return EnumPtr->GetEnumName((int32)Value);
+
+
+}
+
+template<typename TEnum>
+TEnum SlAiDataHandle::GetEnumValueFromString(const FString& Name, FString Value)
+{
+	const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, *Name, true);
+	if (!EnumPtr)
+	{
+		return TEnum(0);
+	}
+	return (TEnum)EnumPtr->GetIndexByName(FName(*FString(Value)));
+
+
+}
+
+
+
+void SlAiDataHandle::InitRecordData()
+{
+	//获取语言
+	FString Culture;
+	//读取存档数据
+	SlAiSingleton<SlAiJsonHandle>::Get()->RecordDataJsonRead(Culture, MusicVolume, SoundVolume, RecordDataList);
+
+
+	//初始化语言
+	ChangeLocalizationCulture(GetEnumValueFromString<ECultureTeam>(FString("ECultureTeam"),Culture));
+	
+
+
+	//
+	SlAiHelpher::Debug(Culture + FString("--") + FString::SanitizeFloat(MusicVolume) + FString("--") + FString::SanitizeFloat(SoundVolume),20.f);
+
+	//循环读取RecordDataList
+	for (TArray<FString>::TIterator It(RecordDataList); It; ++It)
+	{
+		SlAiHelpher::Debug(*It, 20.f);
+	}
+
+
+}
 
 void SlAiDataHandle::ChangeLocalizationCulture(ECultureTeam Culture)
 {
@@ -71,3 +148,5 @@ void SlAiDataHandle::ChangeLocalizationCulture(ECultureTeam Culture)
 
 
 }
+
+

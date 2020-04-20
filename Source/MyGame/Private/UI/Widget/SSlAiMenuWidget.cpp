@@ -13,6 +13,7 @@
 #include "SlAiIntemational.h"
 #include "SBoxPanel.h"
 #include "SlAiHelper.h"
+#include "SlAiDataHandle.h"
 
 
 
@@ -118,7 +119,8 @@ void SSlAiMenuWidget::Construct(const FArguments& InArgs)
 
 
 			SNew(SSlAiGameOptionWidget)
-
+			.ChangeCulture(this, &SSlAiMenuWidget::ChangeCulture)
+			.ChangeVolume(this, &SSlAiMenuWidget::ChangeVolume)
 
 
 		];
@@ -130,4 +132,17 @@ END_SLATE_FUNCTION_BUILD_OPTIMIZATION
 void SSlAiMenuWidget::MenuItemOnClicked(EMenuItem::Type ItemType)
 {
 	//SlAiHelpher::Debug(FString("hhhhh"),5.f);
+}
+
+void SSlAiMenuWidget::ChangeCulture(ECultureTeam culture)
+{
+
+	SlAiDataHandle::Get()->ChangeLocalizationCulture(culture);
+
+
+}
+
+void SSlAiMenuWidget::ChangeVolume(const float MusicVolume, const float SoundVolume)
+{
+	SlAiDataHandle::Get()->ResetMenuVolume(MusicVolume, SoundVolume);
 }

@@ -13,6 +13,13 @@ class SSlider;
 class STextBlock;
 
 
+//修改中英文委托
+DECLARE_DELEGATE_OneParam(FChaneCulture, const ECultureTeam)
+//修改音量文委托
+DECLARE_DELEGATE_TwoParams(FChaneVolume, const float, const float)
+
+
+
 /**
  * 
  */
@@ -21,6 +28,13 @@ class MYGAME_API SSlAiGameOptionWidget : public SCompoundWidget
 public:
 	SLATE_BEGIN_ARGS(SSlAiGameOptionWidget)
 	{}
+
+
+	SLATE_EVENT(FChaneCulture, ChangeCulture)
+
+	SLATE_EVENT(FChaneVolume, ChangeVolume)
+
+
 	SLATE_END_ARGS()
 
 	/** Constructs this widget with InArgs */
@@ -60,6 +74,10 @@ private:
 	//两个滑条
 	TSharedPtr<SSlider>MuSlider;//背景音乐
 	TSharedPtr<SSlider>SoSlider;//背景音效
+
+	//委托变量
+	FChaneCulture ChangeCulture;
+	FChaneVolume ChangeVolume;
 
 
 };
