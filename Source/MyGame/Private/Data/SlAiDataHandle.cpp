@@ -66,6 +66,9 @@ void SlAiDataHandle::ResetMenuVolume(float MusciVal, float SoundVal)
 	}
 
 
+	//更新存档数据
+	SlAiSingleton<SlAiJsonHandle>::Get()->UpdateRecordData(GetEnumValueAsString<ECultureTeam>(FString("ECultureTeam"), CurrentCulture), MusicVolume, SoundVolume, &RecordDataList);
+
 
 
 }
@@ -77,7 +80,7 @@ FString SlAiDataHandle::GetEnumValueAsString(const FString& Name, TEnum Value)
 	const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, *Name, true);
 	if (!EnumPtr)
 	{
-		return FString("InValid";)
+		return FString("InValid");
 
 	}
 	return EnumPtr->GetEnumName((int32)Value);
@@ -113,15 +116,8 @@ void SlAiDataHandle::InitRecordData()
 	
 
 
-	//
-	SlAiHelpher::Debug(Culture + FString("--") + FString::SanitizeFloat(MusicVolume) + FString("--") + FString::SanitizeFloat(SoundVolume),20.f);
 
-	//循环读取RecordDataList
-	for (TArray<FString>::TIterator It(RecordDataList); It; ++It)
-	{
-		SlAiHelpher::Debug(*It, 20.f);
-	}
-
+	
 
 }
 
@@ -146,6 +142,8 @@ void SlAiDataHandle::ChangeLocalizationCulture(ECultureTeam Culture)
 	//赋值,修改语言的枚举值,用于切换场景
 	CurrentCulture = Culture;
 
+	//更新存档数据
+	SlAiSingleton<SlAiJsonHandle>::Get()->UpdateRecordData(GetEnumValueAsString<ECultureTeam>(FString("ECultureTeam"), CurrentCulture), MusicVolume, SoundVolume, &RecordDataList);
 
 }
 

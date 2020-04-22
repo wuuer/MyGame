@@ -131,7 +131,7 @@ END_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
 void SSlAiMenuWidget::MenuItemOnClicked(EMenuItem::Type ItemType)
 {
-	//SlAiHelpher::Debug(FString("hhhhh"),5.f);
+	//SlAiHelper::Debug(FString("hhhhh"),5.f);
 }
 
 void SSlAiMenuWidget::ChangeCulture(ECultureTeam culture)

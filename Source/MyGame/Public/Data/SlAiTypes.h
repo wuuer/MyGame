@@ -10,7 +10,8 @@
 
 
 UENUM()
-enum class ECultureTeam : uint8 {
+enum class ECultureTeam : uint8 
+{
 
 
 	EN = 0,
