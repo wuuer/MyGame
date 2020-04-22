@@ -27,7 +27,7 @@ public:
 
 	//ĞŞ¸Ä²Ëµ¥ÒôÁ¿
 
-	void ResetMenuVolume(float MusciVal, float SoundVal);
+	void ResetMenuVolume(float MusciVol, float SoundVol);
 
 
 public:

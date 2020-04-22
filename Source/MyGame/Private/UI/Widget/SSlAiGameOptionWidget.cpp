@@ -311,6 +311,6 @@ void SSlAiGameOptionWidget::SoundSliderChanged(float Value)
 	//修改音量
 	//SlAiDataHandle::Get()->ResetMenuVolume(-1.f, Value);
 
-	ChangeVolume.ExecuteIfBound(Value, -1.f);
+	ChangeVolume.ExecuteIfBound(-1.f, Value);
 
 }

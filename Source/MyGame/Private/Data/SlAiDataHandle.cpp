@@ -53,16 +53,16 @@ SlAiDataHandle::SlAiDataHandle()
 
 }
 
-void SlAiDataHandle::ResetMenuVolume(float MusciVal, float SoundVal)
+void SlAiDataHandle::ResetMenuVolume(float MusciVol, float SoundVol)
 {
 
-	if (MusciVal > 0)
+	if (MusciVol > 0)
 	{
-		MusicVolume = MusciVal;
+		MusicVolume = MusciVol;
 	}
-	if (SoundVal > 0)
+	if (SoundVol > 0)
 	{
-		SoundVolume = SoundVal;
+		SoundVolume = SoundVol;
 	}
 
 

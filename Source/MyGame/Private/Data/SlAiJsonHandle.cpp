@@ -15,7 +15,7 @@ SlAiJsonHandle::SlAiJsonHandle()
 
 }
 
-void SlAiJsonHandle::RecordDataJsonRead(FString& Culture, float& MusicVolume, float&SoundVolume, TArray<FString>&RecordDataList)
+void SlAiJsonHandle::RecordDataJsonRead(FString& Culture, float&MusicVolume, float&SoundVolume, TArray<FString>&RecordDataList)
 {
 
 	FString JsonValue;
@@ -124,7 +124,7 @@ bool SlAiJsonHandle::LoadStringFromFile(const FString& FileName, const FString& 
 		//获取绝对路径
 
 
-		FString AbsoPath = FPaths::GameContentDir() + RelaPath + FileName;
+		FString AbsoPath = FPaths::ProjectContentDir() + RelaPath + FileName;
 		if (FPaths::FileExists(AbsoPath))
 
 		{
@@ -134,7 +134,7 @@ bool SlAiJsonHandle::LoadStringFromFile(const FString& FileName, const FString& 
 			}
 			else 
 			{
-
+				
 				//加载不成功
 				SlAiHelper::Debug(FString("Load Error") + AbsoPath);
 
@@ -159,20 +159,24 @@ bool SlAiJsonHandle::GetFStringInJsonData(const TSharedPtr<FJsonObject>& JsonObj
 	{
 		TSharedRef<TJsonWriter<TCHAR>> JsonWriter = TJsonWriterFactory<TCHAR>::Create(&JsonStr);
 		FJsonSerializer::Serialize(JsonObj.ToSharedRef(), JsonWriter);
+
 		return true;
 	}
 	return false;
 }
 
+
+
+//写入Json文件
 bool SlAiJsonHandle::WriteFileWithJsonData(const FString& JsonStr, const FString& RelaPath, const FString& FileName)
 {
 	if (!JsonStr.IsEmpty())
 	{
 		if (!FileName.IsEmpty())
 		{
-			FString AbsoPath = FPaths::GameContentDir() + RelaPath + FileName;
+			FString AbsoPath = FPaths::ProjectContentDir() + RelaPath + FileName;
 			//保存
-			if (FFileHelper::SaveStringArrayToFile(JsonStr,*AbsoPath))
+			if (FFileHelper::SaveStringToFile(JsonStr,*AbsoPath))
 			{
 				//SlAiHelper::Debug()
 				return true;
@@ -189,4 +193,3 @@ bool SlAiJsonHandle::WriteFileWithJsonData(const FString& JsonStr, const FString
 	
 
 }
-
