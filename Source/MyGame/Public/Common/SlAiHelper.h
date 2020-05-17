@@ -7,7 +7,7 @@
 
 
 
-namespace SlAiHelpher {
+namespace SlAiHelper {
 
 
 

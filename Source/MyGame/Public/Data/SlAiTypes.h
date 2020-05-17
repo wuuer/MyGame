@@ -10,7 +10,8 @@
 
 
 UENUM()
-enum class ECultureTeam : uint8 {
+enum class ECultureTeam : uint8 
+{
 
 
 	EN = 0,
@@ -39,6 +40,25 @@ namespace EMenuItem
 		EnterGame,
 		EnterRecord
 
+
+	};
+
+}
+
+
+//Menu界面类型
+
+namespace EMenuType
+{
+	enum Type
+	{
+
+		None,
+		MainMenu,
+		StartGame,
+		GameOption, 
+		NewGame, 
+		ChooseRecord
 
 	};
 

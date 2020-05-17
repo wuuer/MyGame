@@ -15,7 +15,9 @@ public class MyGame : ModuleRules
             "InputCore",
             "Slate",
             "SlateCore",
-            "UMG"
+            "UMG",
+            "Json",
+            "JsonUtilities",
         });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
